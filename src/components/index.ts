@@ -1,1 +1,1 @@
-export * from "./OnBoardingItem";
+export * from "./OnBoarding";

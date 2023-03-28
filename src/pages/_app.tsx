@@ -3,6 +3,8 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { Inter } from "next/font/google";
+import NextLink from "next/link";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +22,17 @@ export default function App({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
-      <Component {...pageProps} />
+      <header className="bg-white shadow">
+        <div className="container px-6 xl:px-14 mx-auto flex h-16 items-center ">
+          <NextLink className="block" href="/">
+            <Image src="/logo.svg" alt="Minea" width="100" height="60" />
+          </NextLink>
+        </div>
+      </header>
+
+      <main className="mb-10">
+        <Component {...pageProps} />
+      </main>
     </>
   );
 }
